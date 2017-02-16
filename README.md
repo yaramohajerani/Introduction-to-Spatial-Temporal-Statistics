@@ -1,2 +1,2 @@
-# DSI_Environmental_Baysian_Stats-
-Environmental Data Anlaysis Course using Stan for Baysian Statisitcs (DSI)
+# Environmental_Stats_with_Stan
+Environmental Statistics Course using Stan for Bayesian Statisitcs (DSI)
