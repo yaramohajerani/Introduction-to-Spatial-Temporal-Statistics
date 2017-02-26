@@ -11,8 +11,10 @@ Yara Mohajerani (ymohajer@uci.edu) <br />
 Department of Earth System Science <br />
 University of California, Irvine 
 
+
+
 # Welcome!
-This course is intended to introduce students to the statistical aspects of environmental data from the Bayesian perspective. It's geared toward students who want to make scientific sense of a dataset using models. The focus is on *uncertainty quantification* which is treated via direct application of probability theory, and as such has broad appeal in the environmental sciences.
+This course is intended to introduce students to the statistical aspects of environmental data from the Bayesian perspective. It's geared toward students who want to make scientific inference and quantity uncertainty from observed data.
 
 To implement Bayesian models on the computer we will use the software Stan, which is a C++ package specifically designed for the analysis of Bayesian statistical models. It is an easy-to-use program that is rapidly becoming the go-to tool for Bayesian modelers due to its simplicity, generality, and computational efficiency. 
 
@@ -34,7 +36,11 @@ Coffee Break
 ### Afternoon (1:00pm-5:00pm)
 - Hands-on analysis of Southern California air quality using Stan
 
-## Data
+
+
+
+
+# Data
 The data used in the course are available via the following link: https://www.dropbox.com/sh/wiedyfa4dwjgkfs/AABG83cC9k7QK1StHMMkPHjpa?dl=0. You have access to both the raw data as available from the EPA website, along with the processed data that we'll be working with in class. The processing operations involve geographically subsetting for the Southern California region, and combining covariate files (temperature, wind speed, etc.) that are downlaoded separately from the EPA website. For those interested, the R and Python code to perform the processing is available in the folders /R/ and /Python/ as makdat.R and makdat.py files, respectively. 
 *Insert Description*
 
@@ -42,6 +48,9 @@ The files in the folder are as follows:
 ### Data Files
 1. XXX
 2. YYY
+
+
+
 
 
 # GitHub Table of Contents
