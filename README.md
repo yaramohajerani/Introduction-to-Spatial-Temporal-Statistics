@@ -44,9 +44,11 @@ The files in the folder are as follows:
 # GitHub Table of Contents
 
 ## /Models/
-Here you'll find background notes and Stan code. 
-01. **Introduction to Bayesian Statistics**
-02. **Introduction to Spatial Statistics**
+Here you'll find background notes and Stan code. There are two sets of notes related to background material
+1. **Introduction to Bayesian Statistics**
+2. **Introduction to Spatial Statistics**
+
+The models we will consider in the course are as follows.
 1. **Simple linear regression**
 2. **Simple linear regression with spatial autocorrelation**
 3. **Multiple linear regression with spatial autocorrelation**
