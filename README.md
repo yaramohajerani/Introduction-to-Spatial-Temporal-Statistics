@@ -2,9 +2,8 @@
 A one-day workshop sponsered by the Data Science Initiative, School of Information and Computer Science, in conjuction with the Department of Earth System Science, University of California, Irvine.
 
 Instructors: <br />
-Gregory Britten (gbritten@uci.edu) <br />
-Yara Mohajerani (ymohajer@uci.edu) <br />
-Department of Earth System Science 
+Gregory Britten (gbritten@uci.edu) & Yara Mohajerani (ymohajer@uci.edu) <br />
+Department of Earth System Science, University of California, Irvine 
 
 # Welcome!
 This course is intended to introduce students to the statistical aspects of environmental data from the Bayesian perspective. To implement Bayesian models on the computer we will use the software Stan, which is a C++ package specifically designed for the analysis of Bayesian statistical models. It is an easy-to-use program that is rapidly becoming the go-to tool for Bayesian modelers due to its simplicity, generality, and computational efficiency. 
