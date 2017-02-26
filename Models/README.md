@@ -3,13 +3,6 @@
 This folder contains notes and Stan code related for the statistical models used in the course. 
 
 
-
-## Table of Contents
-01. Try
-02. Try
-1. Try
-
-
 ## Additional references
 While many many references exist that expound the Bayesian approach, we suggest two key references: 
 
