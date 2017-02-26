@@ -1,3 +1,9 @@
+TO DO:
+- Clickable table of contents for notes
+- Stats notes in Python and R? just math?
+
+
+
 # *An Introduction to Environmental Statistics using Stan*
 A one-day workshop sponsered by the Data Science Initiative, School of Information and Computer Science, in conjuction with the Department of Earth System Science, University of California, Irvine.
 
@@ -6,17 +12,19 @@ Gregory Britten (gbritten@uci.edu) & Yara Mohajerani (ymohajer@uci.edu) <br />
 Department of Earth System Science, University of California, Irvine 
 
 # Welcome!
-This course is intended to introduce students to the statistical aspects of environmental data from the Bayesian perspective. To implement Bayesian models on the computer we will use the software Stan, which is a C++ package specifically designed for the analysis of Bayesian statistical models. It is an easy-to-use program that is rapidly becoming the go-to tool for Bayesian modelers due to its simplicity, generality, and computational efficiency. 
+This course is intended to introduce students to the statistical aspects of environmental data from the Bayesian perspective. It's geared toward students who want to make scientific sense of a dataset using models. 
+
+To implement Bayesian models on the computer we will use the software Stan, which is a C++ package specifically designed for the analysis of Bayesian statistical models. It is an easy-to-use program that is rapidly becoming the go-to tool for Bayesian modelers due to its simplicity, generality, and computational efficiency. 
 
 The structure of the course will be as follows:
 
 ### Morning
-1. Introduction to environmental data
-2. Overview of the Bayesian approach to modeling
-3. Analysis of environmental models in Stan
+1. Introduction to environmental data and spatial dependence
+2. Overview of the Bayesian approach to statistical modeling
+3. Crash course in Stan with a linear regression example
 
 ### Afternoon
-4. Analysis of Southern California air quality using Stan
+4. Hands-on analysis of Southern California air quality using Stan
 
 
 # GitHub Table of Contents
