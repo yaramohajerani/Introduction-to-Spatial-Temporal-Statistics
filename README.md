@@ -1,7 +1,12 @@
-# Welcome to *An Introduction to Environmental Statistics using Stan*
-This one-day short course will introduce students to the statistical aspects of environmental data from the Bayesian perspective. To implement Bayesian models we will use the software Stan, which is a C++ package specifically designed for estimating the parameters of Bayesian models.
+# *An Introduction to Environmental Statistics using Stan*
+A one-day workshop sponsered by the Data Science Initiative, School of Information and Computer Science, in conjuction with the Department of Earth System Science, University of California, Irvine.
+Instructors: Gregory Britten (gbritten@uci.edu) & Yara Mohajerani (ymohajer@uci.edu)
+
+# Welcome!
+This course is intended to introduce students to the statistical aspects of environmental data from the Bayesian perspective. To implement Bayesian models on the computer we will use the software Stan, which is a C++ package specifically designed for the analysis of Bayesian statistical models. It is an easy-to-use program that is rapidly becoming the go-to tool for Bayesian modelers due to its simplicity, generality, and computational efficiency. 
 
 The structure of the course will be as follows:
+
 ### Morning
 1. Introduction to environmental data
 2. Overview of the Bayesian approach to modeling
