@@ -35,6 +35,7 @@ The data used in the course are available via the following link: https://www.dr
 *Insert Description*
 
 The files in the folder are as follows:
+### Data Files
 1. XXX
 2. YYY
 
@@ -45,10 +46,12 @@ The files in the folder are as follows:
 
 ## /Models/
 Here you'll find background notes and Stan code. There are two sets of notes related to background material
+
+### Background Material
 1. **Introduction to Bayesian Statistics**
 2. **Introduction to Spatial Statistics**
 
-The models we will consider in the course are as follows.
+### Models
 1. **Simple linear regression**
 2. **Simple linear regression with spatial autocorrelation**
 3. **Multiple linear regression with spatial autocorrelation**
