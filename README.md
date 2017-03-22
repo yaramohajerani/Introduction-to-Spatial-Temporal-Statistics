@@ -1,9 +1,3 @@
-TO DO:
-- Clickable table of contents for notes
-- Stats notes in Python and R simultaneously? Maybe just list give .stan files as character string inside notes?
-- Pre-workshop installation instructions - run a basic model?
-
-
 # *An Introduction to Environmental Statistics using Stan*
 Instructors: <br />
 Gregory Britten (gbritten@uci.edu) <br />
@@ -40,14 +34,23 @@ The schedule of the course is as follows:
 # Datasets
 The files in the folder are as follows:
 ### Datasets
-1. XXX
-2. YYY
+1. Los Angeles ozone time series and covariates
+2. Oregon climate station data
 
 The data used in the course are available via the following link: https://www.dropbox.com/sh/wiedyfa4dwjgkfs/AABG83cC9k7QK1StHMMkPHjpa?dl=0
 
 
 # GitHub Table of Contents
 
+## /R/ and /Python/
+
 ## /Models/
 
-## /R/ and /Python/
+## /Scripts/
+
+
+
+TO DO:
+- Clickable table of contents for notes
+- Stats notes in Python and R simultaneously? Maybe just list give .stan files as character string inside notes?
+- Pre-workshop installation instructions - run a basic model?
