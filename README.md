@@ -1,4 +1,6 @@
-# *An Introduction to Environmental Statistics using Stan*
+Much more to come.
+
+# *An Introduction to Environmental Statistics*
 Instructors: <br />
 Gregory Britten (gbritten@uci.edu) <br />
 Yara Mohajerani (ymohajer@uci.edu) <br />
