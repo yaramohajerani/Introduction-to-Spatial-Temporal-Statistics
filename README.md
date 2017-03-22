@@ -14,61 +14,40 @@ University of California, Irvine
 
 
 # Welcome!
-This course is intended to introduce students to the statistical aspects of environmental data from the Bayesian perspective. It's geared toward students who want to make scientific inference and quantity uncertainty from observed data.
-
-To implement Bayesian models on the computer we will use the software Stan, which is a C++ package specifically designed for the analysis of Bayesian statistical models. It is an easy-to-use program that is rapidly becoming the go-to tool for Bayesian modelers due to its simplicity, generality, and computational efficiency. 
 
 The schedule of the course is as follows:
 
-### Pre-morning (7:30am-8:30am)
-- Installation: Please come if ... 
+### First Thing 
+- How to use Jupyter Notebooks
 
-### Morning (8:30am-12:00pm)
-- Introduction to environmental data and spatial autocorrelation
-- Overview of the Bayesian approach to statistical modeling
+### Morning (8:30-10:00)
+- Introduction to statistics and spatial-temporal autocorrelation
+- Simulations to understand concepts of autocorrelation and stochastic realization
 
-Coffee Break 
+### Coffee Break (10:00-10:20)
 
-- Crash course in Stan with a linear regression example
+### Morning (10:20-12:00)
+- Understanding the consequences of space-time autocorrelation for scientific inferences
+- Code to fit various time series and spatial models 
 
-### Lunch (12:00pm-1:00pm)
+### Lunch (12:00-1:00)
 
-### Afternoon (1:00pm-5:00pm)
-- Hands-on analysis of Southern California air quality using Stan
-
-
-
+### Afternoon (1:00-5:00)
+- Analyze three datasets of varying size and complexity (time vs. space vs. space/time
+- 3pm presentations
 
 
-# Data
-The data used in the course are available via the following link: https://www.dropbox.com/sh/wiedyfa4dwjgkfs/AABG83cC9k7QK1StHMMkPHjpa?dl=0. You have access to both the raw data as available from the EPA website, along with the processed data that we'll be working with in class. The processing operations involve geographically subsetting for the Southern California region, and combining covariate files (temperature, wind speed, etc.) that are downlaoded separately from the EPA website. For those interested, the R and Python code to perform the processing is available in the folders /R/ and /Python/ as makdat.R and makdat.py files, respectively. 
-*Insert Description*
-
+# Datasets
 The files in the folder are as follows:
-### Data Files
+### Datasets
 1. XXX
 2. YYY
 
-
-
+The data used in the course are available via the following link: https://www.dropbox.com/sh/wiedyfa4dwjgkfs/AABG83cC9k7QK1StHMMkPHjpa?dl=0
 
 
 # GitHub Table of Contents
 
 ## /Models/
-Here you'll find background notes and Stan code. There are two sets of notes related to background material
-
-### Background Material
-1. **Introduction to Bayesian Statistics**
-2. **Introduction to Spatial Statistics**
-
-### Models
-1. **Simple linear regression**
-2. **Simple linear regression with spatial autocorrelation**
-3. **Multiple linear regression with spatial autocorrelation**
-4. **Spatial interpolation**
 
 ## /R/ and /Python/
-The R and Python code to fit and analyze the models above are contained in separate folders labeled /R/ and /Python/, respectively. Each folder contains a copies of the *.ipynb* files as specific to the language of your choice. 
-
-Each model notebook contains the basic code to fit the model and plot the results, some brief explanatory background along the way, and a number of exercises exercises of varying complexity that extend the basic analysis.  
