@@ -1,9 +1,17 @@
+##############################################################################
+##-----------------------------Afternoon------------------------------------##
+##############################################################################
 rm(list=ls())
 library(nlme)
 library(fields)
-##########################################################
-## Simulate MV normal spatial data #######################
-##########################################################
+library(colorRamps)
+##############################################################################
+## What generates the pattern? ###############################################
+##############################################################################
+
+##############################################################################
+## Simulate MV normal spatial data ###########################################
+##############################################################################
 M  	<- expand.grid(1:30, 1:30)
 n  	<- nrow(M)
 D  	<- as.matrix(dist(M))
@@ -26,68 +34,84 @@ image.plot(as.matrix(xtabs(t(x0)  ~ M[,1] + M[,2])))
 image.plot(as.matrix(xtabs(t(x)   ~ M[,1] + M[,2])))
 image.plot(as.matrix(xtabs(t(x00) ~ M[,1] + M[,2])))
 
-#########################################################
-## Regression ###########################################
-#########################################################
-######################
-## OLS ###############
-######################
+################################################################################
+## Visualize Oregon climate station data #######################################
+################################################################################
+d <- read.csv('oregon_temp_precip.csv',header=TRUE,stringsAsFactors=FALSE)
+cols <- matlab.like(100)[as.numeric(cut(d$temp_jan,breaks=100))]
+plot(d$lon,d$lat,col=cols,pch=19)
 
-#y2 <- 2*x - 0.1*x^2 + rnorm(n)
+####################################################
+## Krigeing interpolation ##########################
+####################################################
+y      <- d$temp_annual
+latlon <- cbind(d$lon,d$lat)
+s_obs  <- 2
+fit <- likfit(data=y,coords=latlon,
+	fix.nugget=TRUE,
+	cov.model="exponential",
+	ini=c(30,5),
+	nugget=s_obs, 
+	lik.method = "ML")
+phi_hat <- fit$cov.pars[2]
+s2_hat <- fit$cov.pars[1]
 
-X  <- cbind(rep(1,n),t(x))
-#X2 <- cbind(rep(1,n),t(x),t(x^2))
-b  <- solve(t(X)%*%X,   t(X)%*%t(y));b   		#solves the system of linear equations
-#b2 <- solve(t(X2)%*%X2, t(X2)%*%t(y));b2
-
-e    <- t(y) - X%*%b
-sh   <- 1/n * t(e)%*%e
-S0   <- as.numeric(sh)*diag(n)
-S0i  <- chol2inv(chol(S0))
-varb <- chol2inv(chol((t(X)%*%S0i%*%X))); sqrt(diag(varb))
-
-######################
-## GLS ###############
-######################
-bc  <- solve(t(X)%*%Si%*%X,   t(X)%*%Si%*%t(y)); bc
-#bc2 <- solve(t(X2)%*%Si%*%X2, t(X2)%*%Si%*%t(y)); bc2
-
-varbc <- chol2inv(chol((t(X)%*%Si%*%X))); sqrt(diag(varbc))
-
-
-
-
-#-Equilvalent but computationally expensive-#
-solve(t(X)%*%solve(S)%*%X)%*%t(X)%*%solve(S)%*%y
-
-#########################
-## nlme #################
-#########################
-library(nlme)
-dat <- data.frame(y=as.numeric(y),x=as.numeric(x),lat=M[,1],lon=M[,2])
-fit <- gls(y ~ x, data=dat, correlation=corExp(form=~lat+lon,nugget=TRUE))
-
-x0  <- matrix(rnorm(n), ncol=n)
-x   <- x0%*%L
-y  <- 2*x + rnorm(n)
-dat <- data.frame(y=as.numeric(y),x=as.numeric(x),lat=M[,1],lon=M[,2])
-fit <- gls(y ~ x, data=dat, correlation=corExp(form=~lat+lon,nugget=FALSE),method='ML')
+##############################
+## Krigeing prediction #######
+##############################
+lon0    <- seq(min(latlon[,1]),max(latlon[,1]),length=100)
+lat0    <- seq(min(latlon[,2]),max(latlon[,2]),length=100)
+latlon0 <-expand.grid(lon0,lat0)
+pred <- krige.conv(data=y,
+				   coords=latlon,
+				   locations=latlon0,
+				   krige=krige.control(cov.model="exponential",
+					cov.pars=c(s2_hat,phi_hat),nugget=s_obs)
+)
 
 
-
-sp1 <- corSpatial(form = ~ x + y + z, type = "g", metric = "man")
-##########################################################
-## Variogram #############################################
-##########################################################
-library(fields)
-
-vg <- vgram(M, t(xp))
-plot(vg$d, vg$vg, ylab="gamma", xlab="distance")
-lines(vg$centers, vg$stats["mean",], lwd=3, col="red")
-plot(vg$centers, vg$stats["mean",], col="red")
-
-vg <- vgram(mat, x, N=12, dmax=300, lon.lat=T)
+par(mfrow=c(1,2))	
+image.plot(lon0,lat0,matrix(pred$predict,100,100),zlim=range(y))
+	cols <- matlab.like(100)[as.numeric(cut(y,breaks=100))]
+	points(latlon,col=cols,pch=19)
+	points(latlon,col='white')
+image.plot(sp1,sp2,matrix(sqrt(pred$krige.var),100,100))
+points(latlon,col='white')
 
 
+##############################################################################
+## Spatial regression ########################################################
+##############################################################################
+fit <- gls(precip_ann ~ temp_annual, data=d, correlation=corExp(form=~lat+lon,nugget=FALSE),method='ML')
+summary(fit)
 
+fit2 <- gls(precip_ann ~ temp_annual + elevation, data=d, correlation=corExp(form=~lat+lon,nugget=FALSE),method='ML')
+summary(fit2)
+
+y      <- predict(fit2)
+latlon <- cbind(d$lon,d$lat)
+fit <- likfit(data=y,coords=latlon,
+	fix.nugget=TRUE,
+	cov.model="exponential",
+	ini=c(30,5),
+	nugget=FALSE, 
+	lik.method = "ML")	
+phi_hat <- fit$cov.pars[2]
+s2_hat <- fit$cov.pars[1]
+
+lon0    <- seq(min(latlon[,1]),max(latlon[,1]),length=100)
+lat0    <- seq(min(latlon[,2]),max(latlon[,2]),length=100)
+latlon0 <-expand.grid(lon0,lat0)
+pred <- krige.conv(data=y,
+				   coords=latlon,
+				   locations=latlon0,
+				   krige=krige.control(cov.model="exponential",
+					cov.pars=c(s2_hat,phi_hat),nugget=s_obs)
+)
+
+par(mfrow=c(1,2))	
+image.plot(lon0,lat0,matrix(pred$predict,100,100),zlim=range(y))
+	cols <- matlab.like(100)[as.numeric(cut(y,breaks=100))]
+	points(latlon,col=cols,pch=19)
+	points(latlon,col='white')
 
