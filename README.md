@@ -1,4 +1,4 @@
-# *An Introduction to Spatial-Temporal Statistics*
+# *Introduction to Spatial-Temporal Statistics*
 Instructors: <br />
 Gregory Britten (gbritten@uci.edu) <br />
 Yara Mohajerani (ymohajer@uci.edu) <br />
@@ -13,9 +13,8 @@ The workshop is divided in three basic parts: theory, software, and hands-on dat
 The schedule of the course is as follows:
 
 ### Pre-Install (before coming to workshop) 
-- Install Anaconda, packages
-- DOWNLOAD GitHub repo and be able to open the notebooks
-- COME EARLY (8:30) if you can't do this
+- Intall instructions are available from the link above 'Intro : Requirements.ipynb'
+- PLEASE COME TO THE WORKSHOP ROOM EARLY (8:30) IF ANY PART OF THE INSTALL INSTRUCTIONS FAILS 
 
 ### Morning (pre-break)
 - Introduction to spatial-temporal statistics
@@ -36,7 +35,7 @@ The schedule of the course is as follows:
 # GitHub Table of Contents
 
 ## /R/ and /Python/
-These folders contain the Jupyter notebooks. The notebooks contain notes to complement the slide presentation, along with executable code to implement the analyses we discuss. This is also the place where you will extend the analyses in hands-on exercises. The ``R`` and ``Python`` folders are effectively mirror copies of another for the respective languages. 
+These folders contain the Jupyter notebooks. The notebooks contain notes to complement the slide presentation, along with executable code to implement the analyses we discuss. This is also the place where you will extend the analyses in hands-on exercises. The ``R`` and ``Python`` folders are effectively mirror copies of one another for the respective languages. 
 
 ## Data
 1. El Nino time series
