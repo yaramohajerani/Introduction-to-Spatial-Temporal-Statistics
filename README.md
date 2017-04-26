@@ -6,16 +6,16 @@ Department of Earth System Science <br />
 University of California, Irvine 
 
 # Welcome!
-This one-day workshop will introduce you to concepts from statistics that are most important for statistically analyzing spatial-temporal data. Motivated by datasets from the envrionmental sciences, we focus our study on two concepts: statistical autocorrelation and periodicity. The meaning of these terms will become clear as we work through the notebooks, but for now 
+This one-day workshop will introduce you to concepts from statistics that are most important for statistically analyzing spatial-temporal data. Motivated by datasets from the envrionmental sciences, we focus our study on two concepts: statistical autocorrelation and periodicity. The meaning of these terms will become clear as we work through the notebooks.
 
-Software: R packages, call R from Python.
+The workshop is divided in three basic parts: theory, software, and hands-on data analysis. The theory will build upon basic statistics to extend concepts to spatial-temporal properties. For software we'll use a few key R packages, along with Python functionality to access R packages from within Python. 
 
 The schedule of the course is as follows:
 
-### First Thing 
-INSTALL Anaconda, packages
-DOWNLOAD GitHub repo and be able to open the notebooks
-COME EARLY (8:30) if you can't do this
+### Pre-Install (before coming to workshop) 
+- Install Anaconda, packages
+- DOWNLOAD GitHub repo and be able to open the notebooks
+- COME EARLY (8:30) if you can't do this
 
 ### Morning (pre-break)
 - Introduction to spatial-temporal statistics
@@ -39,11 +39,6 @@ COME EARLY (8:30) if you can't do this
 These folders contain the Jupyter notebooks. The notebooks contain notes to complement the slide presentation, along with executable code to implement the analyses we discuss. This is also the place where you will extend the analyses in hands-on exercises. The ``R`` and ``Python`` folders are effectively mirror copies of another for the respective languages. 
 
 ## Data
-1. Los Angeles ozone time series and covariates
-2. Oregon climate station data
-
-The data used in the course are available via the following link: https://www.dropbox.com/sh/wiedyfa4dwjgkfs/AABG83cC9k7QK1StHMMkPHjpa?dl=0
-
-
-
-
+1. El Nino time series
+2. Orange County air quality time series
+3. Oregon climate station data
